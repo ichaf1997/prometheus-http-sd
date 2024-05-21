@@ -109,7 +109,7 @@ def run_generator(generator_path: str, **extra_args) -> TargetList:
         executor = run_json
     elif generator_path.endswith(".py"):
         executor = run_python
-    elif generator_path.endswith(".yaml"):
+    elif generator_path.endswith(".yaml") or generator_path.endswith(".yml"):
         executor = run_yaml
     else:
         generator_requests_total.labels(
